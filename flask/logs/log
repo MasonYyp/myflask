@@ -1,0 +1,2734 @@
+2022-09-28 15:18:22,421 - INFO - _internal.py - _log - 224 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+2022-09-28 15:18:22,423 - INFO - _internal.py - _log - 224 - [33mPress CTRL+C to quit[0m
+2022-09-28 15:22:22,470 - INFO - _internal.py - _log - 224 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+2022-09-28 15:22:22,470 - INFO - _internal.py - _log - 224 - [33mPress CTRL+C to quit[0m
+2022-09-28 15:22:30,615 - INFO - _internal.py - _log - 224 - 127.0.0.1 - - [28/Sep/2022 15:22:30] "[31m[1mGET /flask/public/captcha HTTP/1.1[0m" 405 -
+2022-09-28 15:22:30,695 - INFO - _internal.py - _log - 224 - 127.0.0.1 - - [28/Sep/2022 15:22:30] "GET /favicon.ico HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+Exception on /flask/public/captcha [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 677, in _connect
+    raise err
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 665, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½È·ï¿½ð¸´»ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð·ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 10, in captcha
+    captcha_dict = generate_captcha()
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 21, in generate_captcha
+    redis_db.set(code_key, code.casefold(), 30)
+  File "D:\1_projects\pycharm\zltool\dao\base_db\redis_db.py", line 15, in set
+    self.__strict_redis.set(name=key, value=value, ex=expiry)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\commands\core.py", line 2220, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 1387, in get_connection
+    connection.connect()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10060 connecting to 192.168.108.100:6379. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½È·ï¿½ð¸´»ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð·ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½.
+127.0.0.1 - - [28/Sep/2022 15:23:59] "[35m[1mPOST /flask/public/captcha HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Sep/2022 17:21:42] "[31m[1mPOST /flask/public/login HTTP/1.1[0m" 400 -
+127.0.0.1 - - [28/Sep/2022 17:22:58] "[31m[1mPOST /flask/public/login HTTP/1.1[0m" 400 -
+127.0.0.1 - - [28/Sep/2022 17:23:14] "[31m[1mPOST /flask/public/login HTTP/1.1[0m" 400 -
+127.0.0.1 - - [28/Sep/2022 17:33:01] "[31m[1mPOST /flask/public/login HTTP/1.1[0m" 400 -
+Exception on /flask/public/captcha [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 677, in _connect
+    raise err
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 665, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 11, in captcha
+    captcha_dict = generate_captcha()
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 21, in generate_captcha
+    redis_db.set(code_key, code.casefold(), 30)
+  File "D:\1_projects\pycharm\zltool\dao\base_db\redis_db.py", line 15, in set
+    self.__strict_redis.set(name=key, value=value, ex=expiry)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\commands\core.py", line 2220, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 1387, in get_connection
+    connection.connect()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10060 connecting to 192.168.108.100:6379. ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£.
+127.0.0.1 - - [28/Sep/2022 17:34:29] "[35m[1mPOST /flask/public/captcha HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+Exception on /flask/public/captcha [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 677, in _connect
+    raise err
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 665, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 11, in captcha
+    captcha_dict = generate_captcha()
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 21, in generate_captcha
+    redis_db.set(code_key, code.casefold(), 30)
+  File "D:\1_projects\pycharm\zltool\dao\base_db\redis_db.py", line 15, in set
+    self.__strict_redis.set(name=key, value=value, ex=expiry)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\commands\core.py", line 2220, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 1387, in get_connection
+    connection.connect()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10060 connecting to 192.168.108.100:6379. ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£.
+127.0.0.1 - - [28/Sep/2022 18:23:11] "[35m[1mPOST /flask/public/captcha HTTP/1.1[0m" 500 -
+Exception on /flask/public/captcha [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 677, in _connect
+    raise err
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 665, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 11, in captcha
+    captcha_dict = generate_captcha()
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 21, in generate_captcha
+    redis_db.set(code_key, code.casefold(), 30)
+  File "D:\1_projects\pycharm\zltool\dao\base_db\redis_db.py", line 15, in set
+    self.__strict_redis.set(name=key, value=value, ex=expiry)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\commands\core.py", line 2220, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 1387, in get_connection
+    connection.connect()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10060 connecting to 192.168.108.100:6379. ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£.
+127.0.0.1 - - [28/Sep/2022 18:23:18] "[35m[1mPOST /flask/public/captcha HTTP/1.1[0m" 500 -
+Exception on /flask/public/captcha [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 677, in _connect
+    raise err
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 665, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 11, in captcha
+    captcha_dict = generate_captcha()
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 21, in generate_captcha
+    redis_db.set(code_key, code.casefold(), 30)
+  File "D:\1_projects\pycharm\zltool\dao\base_db\redis_db.py", line 15, in set
+    self.__strict_redis.set(name=key, value=value, ex=expiry)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\commands\core.py", line 2220, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 1387, in get_connection
+    connection.connect()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10060 connecting to 192.168.108.100:6379. ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£.
+127.0.0.1 - - [28/Sep/2022 18:23:29] "[35m[1mPOST /flask/public/captcha HTTP/1.1[0m" 500 -
+Exception on /flask/public/captcha [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 677, in _connect
+    raise err
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 665, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 11, in captcha
+    captcha_dict = generate_captcha()
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 21, in generate_captcha
+    redis_db.set(code_key, code.casefold(), 30)
+  File "D:\1_projects\pycharm\zltool\dao\base_db\redis_db.py", line 15, in set
+    self.__strict_redis.set(name=key, value=value, ex=expiry)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\commands\core.py", line 2220, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 1387, in get_connection
+    connection.connect()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10060 connecting to 192.168.108.100:6379. ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£.
+127.0.0.1 - - [28/Sep/2022 18:25:25] "[35m[1mPOST /flask/public/captcha HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+Exception on /flask/public/captcha [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 677, in _connect
+    raise err
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 665, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 11, in captcha
+    captcha_dict = generate_captcha()
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 21, in generate_captcha
+    redis_db.set(code_key, code.casefold(), 30)
+  File "D:\1_projects\pycharm\zltool\dao\base_db\redis_db.py", line 15, in set
+    self.__strict_redis.set(name=key, value=value, ex=expiry)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\commands\core.py", line 2220, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 1387, in get_connection
+    connection.connect()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\redis\connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10060 connecting to 192.168.108.100:6379. ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£.
+127.0.0.1 - - [28/Sep/2022 18:25:59] "[35m[1mPOST /flask/public/captcha HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Sep/2022 18:31:01] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2022 18:31:08] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2022 18:31:11] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2022 19:26:14] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2022 19:26:48] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2022 19:28:11] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2022 19:28:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [28/Sep/2022 19:33:32] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:03:07] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:10:02] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:10:07] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:10:11] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:39:08] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:39:48] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:39:55] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:40:03] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:40:26] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:40:33] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:40:42] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:40:49] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:43:16] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:44:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:44:52] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:45:35] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:46:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:47:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:48:46] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:48:50] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:49:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:49:21] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:54:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:54:28] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:54:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 08:55:09] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:04:06] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:04:10] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:04:30] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:04:33] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:04:59] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:05:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:05:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:06:02] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:06:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:06:07] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:06:09] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:06:09] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:09:03] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:09:06] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:09:09] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:09:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:09:44] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:09:45] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:10:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:10:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:10:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:10:57] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:11:03] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:11:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:15:45] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:16:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:16:26] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:18:34] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:18:47] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:19:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:19:08] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:19:23] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:19:27] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:19:42] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:20:13] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:20:14] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:20:21] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:21:04] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:21:33] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:21:55] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:22:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:23:17] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:23:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:23:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:24:07] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:24:32] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:24:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:24:52] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:25:03] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:25:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:26:22] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:27:32] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:29:14] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:31:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:31:46] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:35:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:37:32] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:37:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:38:19] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:38:34] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:39:08] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:39:51] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:40:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:40:29] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:40:34] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:40:45] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:41:52] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:42:42] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:43:13] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:44:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:44:58] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:45:51] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:51:21] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:52:46] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:53:00] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:55:18] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:55:23] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:55:28] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:57:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:58:03] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 09:58:25] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [29/Sep/2022 20:44:13] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 20:44:23] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 20:45:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 20:45:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 20:46:16] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 20:46:21] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 20:46:30] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 20:46:34] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [29/Sep/2022 20:46:45] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:48:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:49:28] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:49:33] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:49:45] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:49:51] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:50:07] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:50:17] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:50:23] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 11:51:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:52:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 11:52:09] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 16:16:08] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 16:17:59] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 16:19:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 16:19:22] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 16:30:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 16:30:52] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 16:30:56] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 16:48:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 16:55:17] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:00:48] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:00:52] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:01:12] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:01:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:01:46] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:01:49] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:01:53] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:02:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:02:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:24] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:24] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:25] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:25] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:26] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:26] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:26] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:26] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:27] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:27] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:28] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:28] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:28] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:28] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:29] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:29] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:29] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:29] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:30] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:30] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:31] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:31] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:32] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:32] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:33] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:33] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:33] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:33] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:34] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:34] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:35] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:35] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:36] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:36] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:37] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:38] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:38] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:39] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:39] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:40] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:41] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:41] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:41] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:41] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:42] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:42] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:42] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:42] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:43] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:44] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:44] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:44] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:44] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:45] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:45] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:45] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:45] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:46] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:46] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:47] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:47] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:47] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:02:47] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:02:48] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:02:52] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 17:03:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:36] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:36] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:37] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:38] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:38] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:39] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:40] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:40] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:41] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:41] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:42] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:42] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:42] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:42] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:43] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:44] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:44] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:44] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:44] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:45] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:45] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:45] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:45] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:46] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:46] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:03:47] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:03:47] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 17:05:21] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:05:30] "POST /flask/public/login HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:05:30] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:05:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:11:13] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 17:11:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:11:52] "POST /flask/public/login HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:11:52] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:11:52] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:12:00] "POST /flask/public/login HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:12:00] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:12:00] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 17:14:53] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:14:57] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:15:06] "POST /flask/public/login HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:15:06] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:15:06] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:17:04] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:17:07] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:17:14] "POST /flask/public/login HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool3.8.2\lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [30/Sep/2022 17:17:14] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [30/Sep/2022 17:17:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 17:18:21] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:18:29] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:18:35] "POST /flask/public/login HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 17:23:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:23:36] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:24:09] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:24:15] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:24:35] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:24:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:24:43] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:24:46] "POST /flask/public/login HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 17:25:03] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2022 17:25:09] "POST /flask/public/login HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.127:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Sep/2022 17:27:09] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00027s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [30/Sep/2022 17:27:15] "POST /flask/public/login HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 6.529s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [30/Sep/2022 17:27:22] "POST /flask/public/login HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 10:50:49] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 10:51:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 13:58:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 13:58:21] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 13:58:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 13:58:29] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:00:30] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:00:35] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00064s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:00:43] "POST /flask/public/login HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 14:05:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:05:42] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:05:51] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:06:32] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:07:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:08:02] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00071s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:08:08] "POST /flask/public/login HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 3.128s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:08:11] "POST /flask/public/login HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 5.541s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:08:13] "POST /flask/public/login HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 14:17:22] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00061s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:17:30] "POST /flask/public/login HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 5.077s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:17:35] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:20:30] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:20:34] "POST /flask/public/login HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 14:23:07] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:24:06] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:24:11] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 14:26:04] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 14:26:49] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 14:27:30] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 14:28:49] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:33:54] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00036s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:34:01] "POST /flask/public/login HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 3.023s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:34:04] "POST /flask/public/login HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 4.132s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:34:05] "POST /flask/public/login HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 5.632s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:34:07] "POST /flask/public/login HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 14:40:27] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:40:29] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00061s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 14:40:36] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:40:38] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:47:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:47:34] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 14:47:49] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 15:11:27] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:11:33] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:12:32] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:13:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:13:19] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00046s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 15:13:38] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:13:40] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:14:52] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:15:13] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:15:32] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:15:35] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:17:27] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:32:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:49:28] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:49:32] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:52:09] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 15:53:33] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/userinfo/name [GET]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1730, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [07/Oct/2022 15:54:01] "[35m[1mGET /flask/userinfo/name HTTP/1.1[0m" 500 -
+Exception on /flask/userinfo/name [GET]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1730, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [07/Oct/2022 15:55:31] "[35m[1mGET /flask/userinfo/name HTTP/1.1[0m" 500 -
+Exception on /flask/userinfo/name [GET]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1730, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [07/Oct/2022 15:55:36] "[35m[1mGET /flask/userinfo/name HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+Exception on /flask/userinfo/name [GET]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1730, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [07/Oct/2022 15:56:22] "[35m[1mGET /flask/userinfo/name HTTP/1.1[0m" 500 -
+Exception on /flask/userinfo/name [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1730, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [07/Oct/2022 15:57:40] "[35m[1mPOST /flask/userinfo/name HTTP/1.1[0m" 500 -
+Exception on /flask/userinfo/name [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1730, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [07/Oct/2022 15:57:52] "[35m[1mPOST /flask/userinfo/name HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Oct/2022 15:59:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+Exception on /flask/userinfo/name [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1730, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a int.
+127.0.0.1 - - [07/Oct/2022 15:59:18] "[35m[1mPOST /flask/userinfo/name HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:02:00] "POST /flask/userinfo/name HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:07:46] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:08:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00060s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:08:12] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:08:16] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:08:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:08:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 24.97s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:08:37] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:08:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:16:50] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00053s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:17:01] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:19:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:19:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:19:52] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:19:52] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:19:57] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:20:16] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:21:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:21:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:21:28] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:21:30] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:21:36] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:21:36] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:22:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:22:08] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:22:15] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:22:22] "POST /flask/public/captcha HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 326.7s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:22:27] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:23:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:23:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:23:41] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:23:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 408.2s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:23:49] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:23:49] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:23:55] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:24:13] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:26:21] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:27:01] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:27:06] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00028s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:27:10] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:27:44] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:27:56] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:28:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:28:50] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:28:55] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:29:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:29:10] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:29:16] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:29:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[cached since 135.6s ago] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:29:25] "POST /flask/public/login HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:32:19] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:33:13] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:33:13] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:33:13] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:33:24] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:33:24] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:33:29] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00044s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:33:35] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:33:38] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:33:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:34:08] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:34:09] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:34:18] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:34:22] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:34:34] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:34:34] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:35:04] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:35:08] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:35:32] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:35:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00066s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:35:44] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:35:44] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:35:47] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:35:49] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:37:55] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:38:05] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:38:08] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:38:12] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:38:14] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:39:48] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:39:48] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:40:20] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:40:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:40:35] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:40:35] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:41:50] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:41:50] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:42:54] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:42:56] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:42:58] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00059s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 16:43:05] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:05] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:08] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:11] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:13] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:14] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:15] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:16] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:17] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:18] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:19] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:20] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:21] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:22] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:23] "POST /flask/userinfo/name HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:43:31] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:32] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:33] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:36] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:36] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:38] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:43:38] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:44:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:44:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:44:41] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:44:41] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:44:44] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:44:44] "POST /flask/public/retoken HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:48:51] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:48:51] "POST /flask/public/retoken HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:54:11] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 17, in retoken
+    return refresh_token("")
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 95, in refresh_token
+    token = operate_token.create_token(user.id, user.name, token_deadline)
+AttributeError: 'str' object has no attribute 'id'
+127.0.0.1 - - [07/Oct/2022 16:54:11] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Oct/2022 16:54:12] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:54:19] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 16:55:51] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 17, in retoken
+    return refresh_token("")
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 96, in refresh_token
+    token = operate_token.create_token(user.id, user.name, token_deadline)
+AttributeError: 'str' object has no attribute 'id'
+127.0.0.1 - - [07/Oct/2022 16:55:51] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Oct/2022 16:55:51] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:55:57] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:56:03] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 17, in retoken
+    return refresh_token("")
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 96, in refresh_token
+    token = operate_token.create_token(user.id, user.name, token_deadline)
+AttributeError: 'str' object has no attribute 'id'
+127.0.0.1 - - [07/Oct/2022 16:56:03] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Oct/2022 16:56:04] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:57:25] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:57:25] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:57:33] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 16:57:37] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 17, in retoken
+    return refresh_token("")
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 96, in refresh_token
+    token = operate_token.create_token(user.id, user.name, token_deadline)
+AttributeError: 'str' object has no attribute 'id'
+127.0.0.1 - - [07/Oct/2022 16:57:37] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Oct/2022 16:57:44] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 17, in retoken
+    return refresh_token("")
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 96, in refresh_token
+    token = operate_token.create_token(user.id, user.name, token_deadline)
+AttributeError: 'str' object has no attribute 'id'
+127.0.0.1 - - [07/Oct/2022 16:57:44] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:00:02] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:07] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00031s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 17:00:14] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:14] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:17] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:18] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:19] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:27] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:29] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:29] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:30] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:35] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:35] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:36] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:37] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:37] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:38] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:38] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:38] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:39] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:42] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:00:43] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 17, in retoken
+    return refresh_token("")
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 94, in refresh_token
+    token = operate_token.create_token(user.id, user.name, token_deadline)
+AttributeError: 'str' object has no attribute 'id'
+127.0.0.1 - - [07/Oct/2022 17:00:43] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:02:22] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 18, in retoken
+    return refresh_token(data['retoken'])
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 94, in refresh_token
+    token = operate_token.create_token(user.id, user.name, token_deadline)
+AttributeError: 'dict' object has no attribute 'id'
+127.0.0.1 - - [07/Oct/2022 17:02:22] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:03:59] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 18, in retoken
+    return refresh_token(data['retoken'])
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 94, in refresh_token
+    token = operate_token.create_token(user.id, user.name, token_deadline)
+AttributeError: 'dict' object has no attribute 'id'
+127.0.0.1 - - [07/Oct/2022 17:03:59] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Oct/2022 17:04:01] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:03] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:08] "POST /flask/public/login HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00037s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 17:04:13] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:13] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:15] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:16] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:18] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:19] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:32] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:34] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:36] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:38] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:40] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:04:42] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 18, in retoken
+    return refresh_token(data['retoken'])
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 94, in refresh_token
+    token = operate_token.create_token(user.id, user.name, token_deadline)
+AttributeError: 'dict' object has no attribute 'id'
+127.0.0.1 - - [07/Oct/2022 17:04:42] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:05:30] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 18, in retoken
+    return refresh_token(data['retoken'])
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 94, in refresh_token
+    token = operate_token.create_token(user.user_id, user.user_name, token_deadline)
+AttributeError: 'dict' object has no attribute 'user_id'
+127.0.0.1 - - [07/Oct/2022 17:05:30] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:06:28] "POST /flask/userinfo/name HTTP/1.1" 200 -
+Exception on /flask/public/retoken [POST]
+Traceback (most recent call last):
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python3.8.2\pytool1.0.0\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\1_projects\pycharm\zltool\route\public_route.py", line 18, in retoken
+    return refresh_token(data['retoken'])
+  File "D:\1_projects\pycharm\zltool\service\public_service.py", line 95, in refresh_token
+    token = operate_token.create_token(user.user_id, user.user_name, token_deadline)
+AttributeError: 'dict' object has no attribute 'user_id'
+127.0.0.1 - - [07/Oct/2022 17:06:28] "[35m[1mPOST /flask/public/retoken HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:07:12] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:07:12] "POST /flask/public/retoken HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:21:51] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:21:51] "POST /flask/public/retoken HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:23:47] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:23:50] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00036s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 17:23:54] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:23:54] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:23:57] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:00] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:00] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:01] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:03] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:04] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:06] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:06] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:08] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:09] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:10] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:11] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:13] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:14] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:15] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:16] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:17] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:19] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:20] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:21] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:23] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:24] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:25] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:25] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:36] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:36] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:46] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:46] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:48] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:48] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:49] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:49] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:58] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:24:58] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:00] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:00] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:01] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:01] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:02] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:02] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:04] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:04] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:11] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:11] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:13] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:13] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:25:41] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:26:29] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:26:29] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:27:03] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:27:03] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:27:13] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:27:13] "POST /flask/public/retoken HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:29:48] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:29:48] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:36:37] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:36:37] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:36:37] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:36:37] "POST /flask/public/retoken HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:41:54] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:41:54] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:41:58] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:42:05] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:42:35] "POST /flask/userinfo/name HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:43:58] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:44:01] "POST /flask/userinfo/name HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:46:34] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:46:36] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:46:36] "POST /flask/userinfo/name HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:47:17] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:47:51] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:47:53] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:47:54] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00037s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 17:47:59] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:47:59] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:02] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:03] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:04] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:05] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:06] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:08] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:09] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:09] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:10] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:10] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:11] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:11] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:30] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:48:34] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:49:03] "POST /flask/userinfo/name HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:54:18] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:54:18] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:54:21] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:54:21] "POST /flask/userinfo/name HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 17:54:52] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 17:54:52] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:00:38] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:00:38] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:00:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:00:59] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:01:07] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:01:25] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:01:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:01:53] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:01:53] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:01:53] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:02:13] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:02:17] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:02:20] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:02:26] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:02:26] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:02:26] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:02:45] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:02:45] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:02:45] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:03:10] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:03:11] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:21] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:22] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:25] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:25] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:50] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:50] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:56] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:56] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:04:56] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00059s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 18:05:01] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:01] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:04] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:05] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:10] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:13] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:13] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:14] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:15] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:23] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:24] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:25] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:27] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:27] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:28] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:30] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:31] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:31] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:31] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:31] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:33] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:33] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:33] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:52] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:52] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:52] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:52] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:52] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:52] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:05:53] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:06:00] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:06:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:06:15] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:06:15] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:06:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:06:15] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:07:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:07:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:07:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 18:09:17] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00039s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 18:09:22] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:22] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:24] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:34] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:35] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:36] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:36] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:37] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:39] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:40] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:41] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:42] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:43] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:45] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:45] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:47] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:52] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:52] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:52] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:55] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:57] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:09:59] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:00] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:01] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:03] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:05] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:06] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:07] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:08] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:09] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:10] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:11] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:12] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:13] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:20] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:21] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:22] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:22] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:22] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:24] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:10:26] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:11:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:11:31] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:11:31] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:11:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:11:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:12:00] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:12:00] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:12:00] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:13:01] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:13:02] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:13:02] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:14:14] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:14:14] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:14:14] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:14:50] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:14:51] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:14:51] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:14:59] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:14:59] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:14:59] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:17:11] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:17:12] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:17:12] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:17:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:17:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:17:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:19:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:19:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:19:37] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:23:06] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:23:06] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:23:06] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:23:38] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:23:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:23:39] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:23:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:23:44] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:23:44] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:24:23] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:24:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:24:24] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:26:27] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:26:28] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:26:28] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:26:46] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:26:47] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:26:47] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:27:13] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:27:14] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:27:14] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:28:50] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:28:51] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:28:51] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:29:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:29:41] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:29:41] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:17] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:18] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:18] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:30] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:31] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:41] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:41] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:42] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:30:43] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:31:12] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:31:12] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:31:12] "POST /flask/public/captcha HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.124.12:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Oct/2022 18:32:36] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:40] "POST /flask/public/captcha HTTP/1.1" 200 -
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+SELECT tf_user.id AS tf_user_id, tf_user.name AS tf_user_name, tf_user.pwd AS tf_user_pwd 
+FROM tf_user 
+WHERE tf_user.name = %(name_1)s AND tf_user.pwd = %(pwd_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00054s] {'name_1': 'mason', 'pwd_1': '123456', 'param_1': 1}
+ROLLBACK
+127.0.0.1 - - [07/Oct/2022 18:32:45] "POST /flask/public/login HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:45] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:47] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:48] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:49] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:49] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:50] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:50] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:55] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:57] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:58] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:32:59] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:00] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:01] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:02] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:03] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:04] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:04] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:05] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:05] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:05] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:06] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:07] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:08] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:09] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:14] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:15] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:19] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:20] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:22] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:23] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:25] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:25] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:25] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:28] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:54] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:54] "POST /flask/public/retoken HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:54] "POST /flask/userinfo/name HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:54] "POST /flask/public/captcha HTTP/1.1" 200 -
+127.0.0.1 - - [07/Oct/2022 18:33:54] "POST /flask/public/captcha HTTP/1.1" 200 -
